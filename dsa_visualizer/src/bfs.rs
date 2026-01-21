@@ -151,7 +151,7 @@ impl Algorithm for BFSVisualizer {
         self.bfs_step();
     }
 
-    fn render(&mut self, ui: &mut egui::Ui) {
+    fn render(&mut  self, ui: &mut egui::Ui) {
         self.render_tree(ui);
     }
 
