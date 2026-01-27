@@ -133,7 +133,7 @@ impl BTreeVisualizer {
 
         if !node.is_leaf {
             let child_y = pos.y + 80.0;
-            let spread_factor = 250.0 / (level + 1.0).powi(2).max(1.0);
+            let spread_factor = 469.0 / (level + 1.0).powi(2).max(1.0);
             let total_children_width = (node.children.len() as f32 - 1.0) * spread_factor;
             let start_x = pos.x - total_children_width / 2.0;
 

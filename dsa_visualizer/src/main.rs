@@ -15,6 +15,7 @@ mod rabin_carp;
 mod gradient_descent;
 mod euclidean;
 mod btree;
+mod bplus_tree;
 
 use std::time::Duration;
 use algorithm::Algorithm;
@@ -105,6 +106,11 @@ impl eframe::App for DSAVisualizer {
                     if ui.add_sized(button_size, egui::Button::new("B-tree Visual")).clicked() {
                         self.current_scene = "B-tree Visual".to_string();
                         self.current_algorithm = Some(Box::new(btree::BTreeVisualizer::new()));
+                        self.current_algorithm.as_mut().unwrap().initialize();
+                    }
+                    if ui.add_sized(button_size, egui::Button::new("B+ tree Visual")).clicked() {
+                        self.current_scene = "B+ tree".to_string();
+                        self.current_algorithm = Some(Box::new(bplus_tree::BplusTreeVisualizer::new()));
                         self.current_algorithm.as_mut().unwrap().initialize();
                     }
                 });
